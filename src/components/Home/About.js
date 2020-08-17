@@ -2,15 +2,35 @@ import React from "react"
 import styled from "styled-components"
 import Title from "../StyledTitle"
 import img from "../../images/defaultBcg.jpeg"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
+
+const query = graphql`
+  {
+    aboutImage: file(relativePath: { eq: "defaultBcg.jpeg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+`
 
 const About = () => {
+  const {
+    aboutImage: {
+      childImageSharp: { fluid },
+    },
+  } = useStaticQuery(query)
+
   return (
     <Wrapper>
       <Title title="about" subtitle="us" />
       <div className="about-center">
         <article className="about-img">
           <div className="img-container shadow">
-            <img src={img} alt="about backroads" />
+            <Img fluid={fluid} />
           </div>
         </article>
         <article className="about-info">
