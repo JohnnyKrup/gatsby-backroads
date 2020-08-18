@@ -20,7 +20,16 @@ module.exports = {
   },
   /* Your site config here */
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://jk-gatsby-backroads.netlify.app",
+        sitemap: "https://jk-gatsby-backroads.netlify.app/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     `gatsby-plugin-playground`,
     `gatsby-plugin-styled-components`,
     {

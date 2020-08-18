@@ -7,6 +7,7 @@ import Markdown from "remark-parse"
 import html from "remark-html"
 import unified from "unified"
 import Image from "gatsby-image"
+import SEO from "../components/SEO"
 
 const Blog = ({ data }) => {
   const {
@@ -20,6 +21,7 @@ const Blog = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title={title} />
       <Wrapper>
         <div className="center">
           <h1>{title}</h1>

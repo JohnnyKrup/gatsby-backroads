@@ -4,6 +4,7 @@ import StyledHero from "../components/StyledHero"
 import { graphql } from "gatsby"
 import BlogList from "../components/Blogs/BlogList"
 import BlogCard from "../components/Blogs/BlogCard"
+import SEO from "../components/SEO"
 
 const blog = ({ data }) => {
   const {
@@ -13,6 +14,7 @@ const blog = ({ data }) => {
   } = data
   return (
     <Layout>
+      <SEO title="Blog" />
       <StyledHero img={fluid}></StyledHero>
       <BlogList />
     </Layout>

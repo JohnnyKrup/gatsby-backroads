@@ -5,6 +5,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 import styled from "styled-components"
 import BlogCard from "../components/Blogs/BlogCard"
 import Title from "../components/StyledTitle"
+import SEO from "../components/SEO"
 
 const Blog = props => {
   const { data } = props
@@ -20,6 +21,7 @@ const Blog = props => {
 
   return (
     <Layout>
+      <SEO title="Blogs" />
       <Wrapper>
         <Title title="latest" subtitle="posts" />
         <div className="center">
