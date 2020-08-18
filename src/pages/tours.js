@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import StyledHero from "../components/StyledHero"
 import { graphql } from "gatsby"
+import Tours from "../components/Tours/Tours"
 
 const tours = ({ data }) => {
   const {
@@ -12,6 +13,7 @@ const tours = ({ data }) => {
   return (
     <Layout>
       <StyledHero img={fluid}></StyledHero>
+      <Tours />
     </Layout>
   )
 }

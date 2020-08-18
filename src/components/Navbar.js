@@ -13,7 +13,7 @@ const Navbar = () => {
     //setIsOpen(isOpen => !isOpen)
   }
 
-  console.log(3 + 22)
+  //console.log(isOpen)
 
   return (
     <nav className={styles.navbar}>

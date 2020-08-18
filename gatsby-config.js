@@ -13,11 +13,15 @@ module.exports = {
     title: "BackRoads",
     description:
       "Explore awesome locations around the world and discover what makes each of them unique. Forget your daily routine & say yes to adventure",
-    author: "@johndoe",
-    data: { name: "john", age: 24 },
+    author: "@joesmith",
+    twitterUsername: "@joe_smith",
+    image: "/defaultBcg.jpeg",
+    siteUrl: "https://jk-gatsby-backroads.netlify.app",
   },
   /* Your site config here */
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-playground`,
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -39,10 +43,16 @@ module.exports = {
             baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
             tableName: `Tours`,
             mapping: { images: `fileNode` },
+            tableLinks: [`journey`],
           },
           {
             baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
             tableName: `Itinerary`,
+          },
+          {
+            baseId: process.env.GATSBY_AIRTABLE_BASE_ID,
+            tableName: `Posts`,
+            mapping: { image: `fileNode` },
           },
         ],
       },

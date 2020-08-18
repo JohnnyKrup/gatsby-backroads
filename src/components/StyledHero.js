@@ -25,7 +25,7 @@ const query = graphql`
  */
 const StyledHero = ({ img, className, children, home }) => {
   const data = useStaticQuery(query)
-  console.log(data)
+  //console.log(data)
   const {
     file: {
       childImageSharp: { fluid },

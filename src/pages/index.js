@@ -6,6 +6,8 @@ import About from "../components/Home/About"
 import Services from "../components/Home/Services"
 import StyledHero from "../components/StyledHero"
 import { graphql } from "gatsby"
+import FeaturedTours from "../components/Home/FeaturedTours"
+import SEO from "../components/SEO"
 
 const home = ({ data }) => {
   const {
@@ -16,6 +18,7 @@ const home = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title="Home" />
       <StyledHero home="true" img={fluid}>
         <Banner
           title="continue exploring"
@@ -29,6 +32,7 @@ const home = ({ data }) => {
 
       <About />
       <Services />
+      <FeaturedTours />
     </Layout>
   )
 }
